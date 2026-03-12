@@ -606,3 +606,28 @@ h2 {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
   }
 }
+
+/* mostrar e esconder senha */
+.password-field {
+  position: relative;
+  width: 100%;
+}
+
+.password-field input {
+  width: 100%;
+  padding-right: 40px;
+}
+
+.toggle-password {
+  position: absolute;
+  top: 50%;
+  right: 12px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 18px;
+  color: #666;
+}
+
+.toggle-password:hover {
+  color: #000;
+}
