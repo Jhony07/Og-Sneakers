@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/css/signup.css" />
+  <title>OG Sneakers</title>
+</head>
+
+<body>
+  <header class="auth-header">
+    <a href="#" class="logo-container">
+      <img src="./img/Og Sneakers - logo PNG.png" alt="Og Sneakers logo" class="logo" />
+    </a>
+  </header>
+
+  <main class="auth-main">
+
+    <div class="auth-container">
+      <div class="card">
+
+        <div class="auth-tabs">
+          <button type="button" class="tab-active" data-href="#">Sign Up</button>
+          <button type="button" class="tab" data-href="Login.html">Log In</button>
+        </div>
+
+        <h2>Sign Up</h2>
+        <form action="" class="auth-form">
+          <input type="text" placeholder="First Name">
+          <input type="text" placeholder="Last Name">
+          <input type="email" placeholder="Email Address">
+          <input type="password" placeholder="Password">
+          <p class="password-hint">At least 8 characters, 1 uppercase letter, 1 number & 1 symbol
+          </p>
+
+          <label class="terms">
+            <input type="checkbox" name="" id="">
+            I have read and agree to the <a href="#"> Terms and Conditions</a> and <a href="#">
+              Privacy
+              Policy</a>
+          </label>
+
+          <button type="submit" class="primary-btn">Sign Up</button>
+        </form>
+
+        <div class="auth-divider">
+          <span>OR</span>
+        </div>
+
+        <p class="auth-social-text">Sign up with?</p>
+
+        <div class="auth-social">
+          <a href="#" class="social-btn" aria-label="Sign up with Google">
+            <img src="./img/google.png" alt="Google">
+          </a>
+
+          <a href="#" class="social-btn" aria-label="Sign up with Apple">
+            <img src="./img/apple.png" alt="Apple">
+          </a>
+
+          <a href="#" class="social-btn" aria-label="Sign up with Facebook">
+            <img src="./img/facebook.png" alt="Facebook">
+          </a>
+
+          <a href="#" class="social-btn" aria-label="Sign up with Email">
+            <img src="./img/email.png" alt="Email">
+          </a>
+        </div>
+
+        <div class="auth-footer">
+          <p>Already have an account? <a href="#">Log In</a></p>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <script>
+    const tabs = document.querySelectorAll('.auth-tabs button');
+    const authTabs = document.querySelector('.auth-tabs');
+
+    function updateDivider() {
+      const activeTab = document.querySelector('.tab-active');
+      const tabIndex = Array.from(tabs).indexOf(activeTab);
+      authTabs.style.setProperty('--divider-transform', `translateX(${tabIndex * 100}%)`);
+    }
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', function () {
+        const href = this.getAttribute('data-href');
+        tabs.forEach(t => t.classList.remove('tab-active'));
+        this.classList.add('tab-active');
+        updateDivider();
+
+        if (href && href !== '#') {
+          window.location.href = href;
+        }
+      });
+    });
+
+    updateDivider();
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,77 @@
+/* RESET BÁSICO */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.auth-header {
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+}
+
+.logo {
+  height: 50px;
+  /* tamanho real da logo */
+  width: auto;
+  /* mantém proporção */
+  display: block;
+}
+
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 20px;
+}
+
+.card {
+  width: 562px;
+  height: 763px;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.97);
+  padding: 50px;
+}
+
+.auth-tabs {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.auth-tabs button {
+  background: none;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+
+form input {
+  width: 440px;
+  height: 53px;
+  padding: 7px;
+  border: 1px solid #dcdcdc;
+  border-radius: 2px;
+  font-size: 14px;
+  margin: 5px;
+}
+
+/* ÁREA PRINCIPAL COM BACKGROUND */
+.auth-main {
+  width: 100%;
+  min-height: calc(100vh - 70px);
+  background-image: url("../img/mosotuh8v9p71.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+h1 {
+  text-align: center;
+
+}
