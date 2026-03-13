@@ -48,7 +48,7 @@ body {
 .auth-main {
   width: 100%;
   min-height: calc(100vh - 70px);
-  background-image: url("../img/mosotuh8v9p71.jpg");
+  background-image: url("/assets/img/background.webp");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -81,6 +81,7 @@ body {
 /* Constrain inner blocks to Figma content width and center them inside the card */
 .card>.auth-form,
 .card>.primary-btn,
+.card>.forgot-password,
 .card>.password-hint,
 .card>.terms,
 .card>.auth-footer,
@@ -183,29 +184,6 @@ body {
   border-bottom: 1px solid #e0e0e0;
 }
 
-.auth-tabs button {
-  background: none;
-  border: none;
-  font-size: clamp(14px, 2.5vw, 16px);
-  font-weight: 500;
-  cursor: pointer;
-  color: #999;
-  border-bottom: 2px solid transparent;
-  flex: 1;
-  text-align: center;
-  transition: color 0.3s ease;
-  padding-bottom: 12px;
-}
-
-.auth-tabs .tab-active {
-  color: #000;
-  font-weight: 600;
-}
-
-.auth-tabs .tab:hover {
-  color: #333;
-}
-
 .auth-tabs::after {
   content: '';
   position: absolute;
@@ -217,6 +195,28 @@ body {
   transition: transform 0.3s ease;
   transform-origin: left;
   transform: var(--divider-transform);
+}
+
+.auth-tabs button {
+  background: none;
+  border: none;
+  font-size: clamp(14px, 2.5vw, 16px);
+  font-weight: 500;
+  cursor: pointer;
+  color: #999;
+  border-bottom: 2px solid transparent;
+  flex: 1;
+  text-align: center;
+  transition: color 0.3s ease;
+}
+
+.auth-tabs .tab-active {
+  color: #000;
+  font-weight: 600;
+}
+
+.auth-tabs .tab:hover {
+  color: #333;
 }
 
 /* DIVISOR */
@@ -260,6 +260,23 @@ h2 {
 
 .auth-form input::placeholder {
   color: #999;
+}
+
+/* Forgot PASSWORD */
+.forgot-password {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  color: #000;
+  margin: -7px 0 15px 0;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-decoration: none;
+  display: block;
+  width: 102px;
+  height: 12px;
+  vertical-align: middle;
+  cursor: pointer;
 }
 
 /* PASSWORD HINT */
