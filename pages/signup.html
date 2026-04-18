@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
   <meta charset="UTF-8" />
@@ -7,12 +7,12 @@
   <link rel="stylesheet" href="/assets/css/auth.css" />
   <link rel="stylesheet"
     href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-  <title>OG Sneakers</title>
+  <title>Cadastro | OG Sneakers</title>
 </head>
 
 <body>
   <header class="auth-header">
-    <a href="#" class="logo-container">
+    <a href="/index.html" class="logo-container">
       <img src="../assets/img/Og Sneakers - logo.png" alt="Og Sneakers logo" class="logo" />
     </a>
   </header>
@@ -21,30 +21,33 @@
 
     <div class="auth-container">
       <div class="card">
-
-        <div class="auth-tabs">
-          <button type="button" class="tab-active" data-href="#">Criar Conta</button>
-          <button type="button" class="tab" data-href="login.html">Entrar</button>
-        </div>
-
         <h2>Criar Conta</h2>
-        <form action="" class="auth-form">
-          <input type="text" placeholder="Name*">
-          <input type="text" placeholder="Sobrenome*">
-          <input type="email" placeholder="E-mail*">
+        <p>Crie sua conta rapidamente e tenha uma experiência completa.</p>
+
+        <form class="auth-form" id="signup-form">
+          <input type="email" id="email" placeholder="E-mail*" aria-label="Digite seu email">
+
+          <!--<p class="erro-msg" id="email-error" style="display: none; color: red; font-size: 12px;">
+          </p>
           <div class="password-field">
-            <input type="password" placeholder="Senha*" id="password">
+            <input type="password" id="password" placeholder="Senha*" aria-label="Digite sua senha">
             <i class="bi bi-eye-slash toggle-password"></i>
           </div>
-          <p class="password-hint">Pelo menos 6 a 8 caracteres, 1 letra maiúscula, 1 número e 1
-            símbolo.
+          <p class="password-hint" id="password-hint">
+            <span id="req-length">6 caracteres</span>,
+            <span id="req-lower">1 letra minúscula</span>,
+            <span id="req-upper">1 letra maiúscula</span>,
+            <span id="req-number">1 número</span> e
+            <span id="req-symbol">1 símbolo</span>.
           </p>
 
           <label class="terms">
-            <input type="checkbox" name="" id="">
-            Li e concordo com os <a href="#">Termos de Uso</a> and <a href="#">
+            <input type="checkbox" id="terms" aria-label="Aceitos os Termos">
+            Li e concordo com os <a href="#">Termos de Uso</a> e <a href="#">
               Política de Privacidade.</a>
           </label>
+          <p class="erro-msg" id="terms-error"
+            style="display: none; color: red; font-size: 12px; margin-top: -5px;"></p>-->
 
           <button type="submit" class="primary-btn">Criar Conta</button>
         </form>

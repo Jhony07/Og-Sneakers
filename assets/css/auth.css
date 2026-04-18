@@ -1,8 +1,9 @@
+/* Configurações Globais e Variáveis */
 :root {
   --divider-transform: translateX(0%);
 }
 
-/* RESET BÁSICO */
+/* Reset Básico */
 * {
   margin: 0;
   padding: 0;
@@ -10,12 +11,12 @@
 }
 
 html {
-  height: 100%;
+  min-height: 100%;
 }
 
 body {
-  height: 100%;
-  overflow: hidden;
+  min-height: 100%;
+  overflow-x: hidden;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -23,7 +24,17 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* HEADER */
+/* Tipografia Global */
+
+h2 {
+  font-size: clamp(20px, 5vw, 28px);
+  font-weight: 600;
+  color: #000;
+  margin-bottom: 5px;
+}
+
+/* Header e Logo */
+
 .auth-header {
   height: 70px;
   display: flex;
@@ -44,7 +55,8 @@ body {
   max-width: 200px;
 }
 
-/* MAIN AREA COM BACKGROUND */
+/* Área Principal com Background */
+
 .auth-main {
   width: 100%;
   min-height: calc(100vh - 70px);
@@ -52,12 +64,14 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  background-attachment: fixed;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-/* CONTAINER E CARD */
+/* Container e Card */
+
 .auth-container {
   display: flex;
   justify-content: center;
@@ -78,7 +92,7 @@ body {
   justify-content: flex-start;
 }
 
-/* Constrain inner blocks to Figma content width and center them inside the card */
+/* Alinha conteúdos internos do card */
 .card>.auth-form,
 .card>.primary-btn,
 .card>.forgot-password,
@@ -89,91 +103,13 @@ body {
 .card>.auth-social-text,
 .card>.auth-social {
   max-width: 440px;
-  /* Figma content width */
   width: 100%;
   margin-left: auto;
   margin-right: auto;
 }
 
-/* Divider: two short lines with OR centered (approx 210px each) */
-.card .auth-divider {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-}
+/* Abas (Tabs) */
 
-.card .auth-divider::before,
-.card .auth-divider::after {
-  content: '';
-  width: 210px;
-  /* metade do content width */
-  height: 1px;
-  background-color: #e0e0e0;
-}
-
-/* Smaller OR text sizing inside card */
-.card .auth-divider span {
-  padding: 0 8px;
-  font-size: 13px;
-}
-
-/* Social area: place 4 icons centered and sized like Figma */
-.card .auth-social {
-  width: 220px;
-  /* 4 icons ~30px + gaps => center within the content */
-  margin: 12px auto 20px auto;
-  display: flex;
-  gap: 14px;
-  justify-content: center;
-}
-
-.card .social-btn {
-  width: 30px;
-  height: 30px;
-  padding: 0;
-  border-radius: 6px;
-  border: none;
-  /* sem borda */
-  background: transparent;
-  /* sem fundo */
-  transition: none;
-  /* sem animação */
-  box-shadow: none;
-}
-
-.card .social-btn:hover {
-  transform: none;
-  box-shadow: none;
-  background: transparent;
-}
-
-.card .social-btn img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
-
-/* 'Sign up with' label sizing */
-.card .auth-social-text {
-  text-align: center;
-  margin-top: -16px;
-  margin-bottom: 6px;
-  font-size: 11px;
-  color: rgba(0, 0, 0, 0.75);
-}
-
-/* Footer small text */
-.card .auth-footer p {
-  font-size: 11px;
-  margin: 6px 0 0 0;
-}
-
-.card .auth-footer a {
-  text-decoration: underline;
-}
-
-/* ABAS */
 .auth-tabs {
   display: flex;
   justify-content: space-between;
@@ -219,20 +155,8 @@ body {
   color: #333;
 }
 
-/* DIVISOR */
-.divider {
-  display: none;
-}
+/* Formulário */
 
-/* TÍTULOS */
-h2 {
-  font-size: clamp(20px, 5vw, 28px);
-  font-weight: 600;
-  color: #000;
-  margin-bottom: 20px;
-}
-
-/* FORMULÁRIO */
 .auth-form {
   display: flex;
   flex-direction: column;
@@ -262,32 +186,70 @@ h2 {
   color: #999;
 }
 
-/* Forgot PASSWORD */
+/* Campo de Senha */
+
+.password-field {
+  position: relative;
+  width: 100%;
+}
+
+.password-field input {
+  width: 100%;
+  padding-right: 40px;
+}
+
+.toggle-password {
+  position: absolute;
+  top: 50%;
+  right: 12px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 18px;
+  color: #666;
+}
+
+.toggle-password:hover {
+  color: #000;
+}
+
+/* Senha - Texto de Ajuda e Rodapé */
+
+.password-footer-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 16px;
+}
+
+.password-footer-row .error-msg {
+  flex: 1;
+  margin: 0;
+}
+
 .forgot-password {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
   font-size: 12px;
   font-weight: 400;
   color: #000;
-  margin: -7px 0 15px 0;
-  line-height: 100%;
+  line-height: 1;
   letter-spacing: 0%;
   text-decoration: none;
-  display: block;
-  width: 102px;
-  height: 12px;
-  vertical-align: middle;
+  white-space: nowrap;
+  flex-shrink: 0;
   cursor: pointer;
 }
 
-/* PASSWORD HINT */
 .password-hint {
-  font-size: 12px;
-  color: red;
+  font-size: 11px;
+  color: black;
   margin: -7px 0 15px 0;
   line-height: 1.4;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
-/* CHECKBOX - TERMS AND CONDITIONS */
+/* Termos e Condições */
+
 .terms {
   display: flex;
   align-items: center;
@@ -320,10 +282,12 @@ h2 {
   text-decoration: underline;
 }
 
-/* BOTÃO PRIMARY */
+/* Botões */
+
+/* Botão Primário */
 .primary-btn {
   width: 100%;
-  height: 48px;
+  height: 53px;
   background-color: #000;
   color: #fff;
   border: none;
@@ -332,7 +296,6 @@ h2 {
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
-  margin-bottom: -40px;
 }
 
 .primary-btn:hover {
@@ -346,7 +309,144 @@ h2 {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
 
-/* AUTH FOOTER */
+/* Botões Sociais */
+.social-btn {
+  width: 100%;
+  aspect-ratio: 1;
+  border: none;
+  background: transparent;
+  border-radius: 4px;
+  padding: 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: none;
+}
+
+.social-btn:hover {
+  transform: none;
+  box-shadow: none;
+  background: transparent;
+}
+
+.social-btn img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Divisores */
+
+.divider {
+  display: none;
+}
+
+/* Divisor "OR" */
+.auth-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.auth-divider::before,
+.auth-divider::after {
+  content: '';
+  height: 1px;
+  background-color: #e0e0e0;
+}
+
+.auth-divider::before,
+.auth-divider::after {
+  flex: 1;
+}
+
+.auth-divider span {
+  padding: 0 15px;
+  font-size: 13px;
+  color: #999;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 500;
+}
+
+/* Divisor especial para card */
+.card .auth-divider {
+  gap: 12px;
+  max-width: 440px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.card .auth-divider::before,
+.card .auth-divider::after {
+  content: '';
+  width: 210px;
+  height: 1px;
+  background-color: #e0e0e0;
+}
+
+.card .auth-divider span {
+  padding: 0 8px;
+  font-size: 13px;
+}
+
+/* Redes Sociais */
+
+/* Texto "Sign up with" */
+.auth-social-text {
+  text-align: center;
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+.card .auth-social-text {
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 6px;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+/* Grid de botões sociais */
+.auth-social {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.card .auth-social {
+  width: 220px;
+  margin: 8px auto 16px auto;
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+}
+
+.card .social-btn {
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  border-radius: 6px;
+  border: none;
+  background: transparent;
+  transition: none;
+  box-shadow: none;
+}
+
+.card .social-btn:hover {
+  transform: none;
+  box-shadow: none;
+  background: transparent;
+}
+
+/* Rodapé */
+
 .auth-footer {
   text-align: center;
   margin-bottom: 20px;
@@ -355,6 +455,11 @@ h2 {
 .auth-footer p {
   font-size: 14px;
   color: #666;
+}
+
+.card .auth-footer p {
+  font-size: 14px;
+  margin: -6px 0 0 0;
 }
 
 .auth-footer a {
@@ -367,136 +472,101 @@ h2 {
   text-decoration: underline;
 }
 
-/* DIVISOR OR */
-.auth-divider {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 34px 0;
+.card .auth-footer a {
+  text-decoration: underline;
 }
 
-.auth-divider::before,
-.auth-divider::after {
-  content: '';
-  flex: 1;
-  height: 1px;
-  background-color: #e0e0e0;
+/* Reset de Senha (Conteúdo do Card) */
+
+.card>p {
+  font-size: 14px;
+  margin-bottom: 8px;
+  line-height: 1.6;
+  text-align: left;
 }
 
-.auth-divider span {
-  padding: 0 15px;
-  font-size: 13px;
-  color: #999;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  font-weight: 500;
+.error-msg {
+  font-size: 12px;
+  color: #d32f2f;
+  margin: 5px 0;
+  display: none;
 }
 
-/* SOCIAL LOGIN TEXT */
-.auth-social-text {
-  text-align: center;
-  font-size: 13px;
-  color: #666;
-  margin-bottom: 20px;
-  font-weight: 500;
+.error-msg.show {
+  display: block;
 }
 
-/* SOCIAL BUTTONS */
+/* Responsividade - Mobile First Approach */
+
+/* Base: Estilos para Mobile (até 375px) */
+.auth-header {
+  height: 60px;
+}
+
+.logo {
+  height: 40px;
+}
+
+.auth-container {
+  padding: 15px 10px;
+}
+
+.card {
+  padding: 20px 15px;
+  border-radius: 8px;
+}
+
+h2 {
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+.auth-form {
+  gap: 10px;
+}
+
+.auth-form input {
+  height: 44px;
+  padding: 10px 12px;
+}
+
+.primary-btn {
+  height: 44px;
+  font-size: 14px;
+}
+
+.password-hint {
+  font-size: 11px;
+  margin: 6px 0 12px 0;
+}
+
+.terms {
+  font-size: 12px;
+  gap: 6px;
+}
+
+.terms input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+}
+
 .auth-social {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.card .auth-social {
+  width: 180px;
   gap: 12px;
-  margin-bottom: 20px;
 }
 
-.social-btn {
-  width: 100%;
-  aspect-ratio: 1;
-  border: none;
-  /* sem borda globalmente */
-  background: transparent;
-  /* sem fundo */
-  border-radius: 4px;
-  padding: 12px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: none;
-  /* desativar animação */
-}
-
-.social-btn:hover {
-  /* sem efeito hover */
-  transform: none;
-  box-shadow: none;
-  background: transparent;
-}
-
-.social-btn img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
-
-/* RESPONSIVE: Otimizado para todos os dispositivos */
-
-/* Extra Small: até 375px (smartphones muito pequenos) */
-@media (max-width: 375px) {
-  .auth-header {
-    height: 60px;
-  }
-
-  .logo {
-    height: 40px;
-  }
-
-  .auth-container {
-    padding: 15px 10px;
-  }
-
-  .card {
-    padding: 20px 15px;
-    border-radius: 8px;
-  }
-
-  h2 {
-    font-size: 18px;
-    margin-bottom: 15px;
-  }
-
-  .auth-form {
-    gap: 10px;
-  }
-
-  .auth-form input {
-    height: 44px;
-    padding: 10px 12px;
-  }
-
-  .primary-btn {
-    height: 44px;
-    font-size: 14px;
-  }
-
-  .password-hint {
-    font-size: 11px;
-    margin: 6px 0 12px 0;
-  }
-
-  .terms {
-    font-size: 12px;
-    gap: 6px;
-  }
-
-  .terms input[type="checkbox"] {
-    width: 16px;
-    height: 16px;
-  }
+.card .social-btn {
+  width: 28px;
+  height: 28px;
 }
 
 /* Small: 376px a 480px (smartphones pequenos) */
-@media (max-width: 480px) {
+@media (min-width: 376px) {
   .auth-header {
     height: 60px;
   }
@@ -530,13 +600,22 @@ h2 {
     font-size: 11px;
   }
 
-  .divider {
-    margin: 0 0 20px 0;
+  .auth-social {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .card .auth-social {
+    width: 200px;
+  }
+
+  .card .social-btn {
+    width: 30px;
+    height: 30px;
   }
 }
 
 /* Medium: 481px a 768px (tablets e smartphones maiores) */
-@media (max-width: 768px) {
+@media (min-width: 481px) {
   .auth-header {
     height: 65px;
   }
@@ -577,6 +656,10 @@ h2 {
     padding-bottom: 10px;
   }
 
+  .auth-social {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
   .card .auth-social {
     width: 100%;
     max-width: 200px;
@@ -584,7 +667,7 @@ h2 {
 }
 
 /* Large: 769px a 1024px (tablets grandes e desktops pequenos) */
-@media (max-width: 1024px) {
+@media (min-width: 769px) {
   .card {
     max-width: 480px;
     padding: 28px 35px;
@@ -605,16 +688,73 @@ h2 {
 
 /* Extra Large: acima de 1024px (desktops) */
 @media (min-width: 1025px) {
+  .auth-header {
+    height: 70px;
+  }
+
+  .logo {
+    height: 50px;
+  }
+
+  .auth-container {
+    padding: 30px 20px;
+  }
+
   .card {
     max-width: 526px;
+    padding: 30px 43px;
+    border-radius: 10px;
+  }
+
+  h2 {
+    font-size: clamp(20px, 5vw, 28px);
+    margin-bottom: 5px;
+  }
+
+  .auth-form {
+    gap: 15px;
+    margin-bottom: 20px;
   }
 
   .auth-form input {
     height: 48px;
+    padding: 12px 15px;
+    font-size: clamp(13px, 2.5vw, 14px);
   }
 
   .primary-btn {
-    height: 48px;
+    height: 53px;
+    font-size: clamp(14px, 2.5vw, 16px);
+  }
+
+  .password-hint {
+    font-size: 11px;
+    margin: -7px 0 15px 0;
+  }
+
+  .terms {
+    font-size: 13px;
+    gap: 8px;
+  }
+
+  .terms input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+  }
+
+  .auth-social {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+  }
+
+  .card .auth-social {
+    width: 220px;
+    margin: 8px auto 16px auto;
+  }
+
+  .card .social-btn {
+    width: 30px;
+    height: 30px;
   }
 
   .primary-btn:hover {
@@ -624,27 +764,51 @@ h2 {
   }
 }
 
-/* mostrar e esconder senha */
-.password-field {
-  position: relative;
-  width: 100%;
-}
+/* Otimizações para telas muito pequenas (abaixo de 320px) */
+@media (max-width: 320px) {
+  .auth-main {
+    background-attachment: scroll;
+    background-size: cover;
+  }
 
-.password-field input {
-  width: 100%;
-  padding-right: 40px;
-}
+  .auth-container {
+    padding: 10px 8px;
+  }
 
-.toggle-password {
-  position: absolute;
-  top: 50%;
-  right: 12px;
-  transform: translateY(-50%);
-  cursor: pointer;
-  font-size: 18px;
-  color: #666;
-}
+  .card {
+    padding: 15px 12px;
+  }
 
-.toggle-password:hover {
-  color: #000;
+  h2 {
+    font-size: 16px;
+  }
+
+  .auth-form input {
+    height: 42px;
+    padding: 8px 10px;
+    font-size: 12px;
+  }
+
+  .primary-btn {
+    height: 42px;
+    font-size: 13px;
+  }
+
+  .password-hint {
+    font-size: 10px;
+  }
+
+  .terms {
+    font-size: 11px;
+  }
+
+  .card .auth-social {
+    width: 160px;
+    gap: 10px;
+  }
+
+  .card .social-btn {
+    width: 25px;
+    height: 25px;
+  }
 }

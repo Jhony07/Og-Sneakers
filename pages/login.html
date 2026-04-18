@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
   <meta charset="UTF-8" />
@@ -7,12 +7,12 @@
   <link rel="stylesheet" href="/assets/css/auth.css" />
   <link rel="stylesheet"
     href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-  <title>OG Sneakers</title>
+  <title>Entrar | OG Sneakers</title>
 </head>
 
 <body>
   <header class="auth-header">
-    <a href="#" class="logo-container">
+    <a href="/index.html" class="logo-container">
       <img src="../assets/img/Og Sneakers - logo.png" alt="Og Sneakers logo" class="logo" />
     </a>
   </header>
@@ -21,20 +21,20 @@
 
     <div class="auth-container">
       <div class="card">
-
-        <div class="auth-tabs">
-          <button type="button" class="tab" data-href="signup.html">Criar Conta</button>
-          <button type="button" class="tab-active" data-href="#">Entrar</button>
-        </div>
-
         <h2>Entrar</h2>
-        <form action="" class="auth-form">
-          <input type="email" placeholder="E-mail*">
+        <form id="login-form" class="auth-form">
+          <input type="email" id="email" placeholder="E-mail*">
+          <p class="error-msg" id="login-email-error"
+            style="display: none; color: red; font-size: 12px;"></p>
           <div class="password-field">
             <input type="password" placeholder="Senha*" id="password">
             <i class="bi bi-eye-slash toggle-password"></i>
           </div>
-          <a href="#" class="forgot-password">Esqueceu a senha?</a>
+          <div class="password-footer-row">
+            <p class="error-msg" id="login-password-error"
+              style="display: none; color: red; font-size: 12px;"></p>
+            <a href="/pages/reset_password.html" class="forgot-password">Esqueceu a senha?</a>
+          </div>
 
           <button type="submit" class="primary-btn">Entrar</button>
         </form>
